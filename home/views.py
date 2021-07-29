@@ -17,7 +17,7 @@ def home(request):
     allPosts = Post.objects.all()
     params = {}
     params['no_of_posts'] = 2
-    # last = math.ceil( len(allPosts) / int(params['no_of_posts']  ))
+    last = math.ceil( len(allPosts) / int(params['no_of_posts']  ))
     print(len(allPosts),last,params['no_of_posts'])
     #logic for pagination for post in index.html
     page = request.GET.get('number')
