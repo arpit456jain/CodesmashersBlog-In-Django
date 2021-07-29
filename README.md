@@ -1,4 +1,4 @@
-# -CodesmashersBlog-In-Django
+# CodesmashersBlog-In-Django
 
 ## 🚀 Quick Start :
 
@@ -81,3 +81,5 @@ pip install -r requirements.txt
 ```
 
 **5.** Go to ` http://127.0.0.1:8000/` and enjoy the application.
+
+https://studygyaan.com/django/django-everywhere-host-your-django-app-for-free-on-heroku
