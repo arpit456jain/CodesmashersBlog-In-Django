@@ -1,12 +1,12 @@
-{% extends 'base2.html' %}
+{% extends 'myblog/base2.html' %}
 {% block title %}Search
 {% endblock title %}
 
 {% block blogactive %}active
 {% endblock blogactive %}
-
+{% load static %}
 {% block body %}
-<header class="masthead" style="background-image: url('/static/img/home-bg.jpg')">
+<header class="masthead" style="background-image: url('/static/myblog/img/bg/bg4.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -42,7 +42,7 @@
             <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}}</strong>
             <h3 class="mb-0">{{post.title}}</h3>
             <div class="mb-1 text-muted">{{post.timeStamp}}</div>
-            <p class="card-text mb-auto">{{post.content| truncatechars:200}}</p>
+            <p class="card-text mb-auto">{{post.content|safe|truncatechars:150}}</p>
             <div class="my-2">
             	<a href="/myblog/{{post.slug}}" role="button" class="btn btn-primary">Continue reading</a>
             </div>

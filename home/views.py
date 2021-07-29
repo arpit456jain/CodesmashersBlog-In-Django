@@ -45,7 +45,7 @@ def home(request):
     params['allPosts']=allPosts
     params['prev'] = prev
     params['next'] = next
-    return render(request,'home/home.html',params)
+    return render(request,'myblog/home/home.html',params)
 
 def contact(request):
     # return HttpResponse("This is contact")
@@ -63,12 +63,12 @@ def contact(request):
             messages.success(request, "Your message has been successfully sent")
     else:
         print('not post')
-    return render(request,'home/contact.html')
+    return render(request,'myblog/home/contact.html')
 
 
 def about(request): 
     # return HttpResponse('This is about')
-    return render(request,'home/about.html')
+    return render(request,'myblog/home/about.html')
 
 def search(request):
     query=request.GET['query']
@@ -85,8 +85,8 @@ def search(request):
         messages.warning(request, "No search results found. Please refine your query.")
     params={'allPosts': allPosts}
     # print(params)
-    return render(request, 'home/search.html', params)
-    # return render(request,'home/search.html')
+    return render(request, 'myblog/home/search.html', params)
+    
     
 def handleSignUp(request):
     if request.method=="POST":
@@ -122,13 +122,8 @@ def handleSignUp(request):
         myuser.last_name= lname
         myuser.save()
         messages.success(request, " Your iCoder has been successfully created")
-        return redirect('home')
-        # try:
-           
-        # except:
-        #     messages.error(request, "Some error occured please try again!")
-        #     return redirect('home')
-            
+        return redirect('/myblog/')
+                  
 
     else:
         return HttpResponse("404 - Not found")
@@ -146,10 +141,10 @@ def handeLogin(request):
             login(request, user)
             messages.success(request, "Successfully Logged In")
             print('loged in')
-            return redirect("home")
+            return redirect("/myblog/")
         else:
             messages.error(request, "Invalid credentials! Please try again")
-            return redirect("home")
+            return redirect("/myblog/")
     else:
         print('not post')
     return HttpResponse("404- Not found")
@@ -177,7 +172,7 @@ def blogPost(request, slug):
     print(replyDict)
     context={'post':post, 'comments': comments, 'user': request.user,'replyDict':replyDict}
     # context={"post":post}
-    return render(request,'home/blogPost.html',context)
+    return render(request,'myblog/home/blogPost.html',context)
 
 def postComment(request):
     if request.method == "POST":

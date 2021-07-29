@@ -21,6 +21,7 @@ admin.site.site_title="CodeSmashers Admin Panel"
 admin.site.index_title="Welcome to CodeSmashers Admin Panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('home.urls')),
     path('myblog/', include('home.urls')),
     
 ]

@@ -1,13 +1,14 @@
-{% extends 'base2.html' %}
+{% extends 'myblog/base2.html' %}
 {% block title %}home
 {% endblock title %}
 
 {% block homeactive %}active
 {% endblock homeactive %}
+{% load static %}
 
 {% block body %}
 <!-- Page Header -->
-  <header class="masthead" style="background-image: url('/static/img/bg/bg1.jpg')">
+  <header class="masthead" style="background-image: url('/static/myblog/img/bg/bg1.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
