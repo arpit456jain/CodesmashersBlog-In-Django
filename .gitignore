@@ -130,3 +130,7 @@ dmypy.json
 .pyre/
 db.sqlite3
 *migrations/
+# Django migration files
+**/migrations/*.py
+!**/migrations/__init__.py
+**/migrations/*.pyc
