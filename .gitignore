@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+*.pyc
+*migrations/
 # Distribution / packaging
 .Python
 build/
@@ -109,7 +110,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-staticfiles/
 
 # Spyder project settings
 .spyderproject
@@ -128,13 +128,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-db.sqlite3
-*migrations/
-# Django migration files
-**/migrations/*.py
-!**/migrations/__init__.py
-**/migrations/*.pyc
-
-__pycache__/
-*.py[cod]     # Matches .pyc, .pyo, .pyd
-*$py.class
